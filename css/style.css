@@ -1092,12 +1092,34 @@ a {
 
 .id-cards-scroll-container {
     position: relative;
-    overflow: visible;
+    overflow-x: auto;
+    overflow-y: hidden;
     width: 100%;
-    max-width: 1400px;
     margin: 0 auto;
     padding: 3rem 4rem 1rem 4rem;
     user-select: none;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-red) rgba(0, 0, 0, 0.1);
+    -webkit-overflow-scrolling: touch;
+}
+
+.id-cards-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.id-cards-scroll-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.id-cards-scroll-container::-webkit-scrollbar-thumb {
+    background: var(--primary-red);
+    border-radius: 10px;
+}
+
+.id-cards-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #c73945;
 }
 
 .carousel-btn {
@@ -1211,29 +1233,32 @@ a {
 
 .id-cards-grid {
     display: flex;
+    flex-wrap: nowrap;
     gap: 2.5rem;
     transition: transform 0.8s ease-in-out;
     will-change: transform;
+    width: max-content;
+    padding-bottom: 1rem;
 }
 
 .id-card-item {
-    flex: 0 0 calc(25% - 1.875rem);
-    min-width: calc(25% - 1.875rem);
+    flex: 0 0 280px;
+    width: 280px;
     text-align: center;
     transition: transform 0.3s ease;
 }
 
 @media (max-width: 1199px) {
     .id-card-item {
-        flex: 0 0 calc(33.333% - 1.667rem);
-        min-width: calc(33.333% - 1.667rem);
+        flex: 0 0 260px;
+        width: 260px;
     }
 }
 
 @media (max-width: 768px) {
     .id-card-item {
-        flex: 0 0 calc(50% - 1.25rem);
-        min-width: calc(50% - 1.25rem);
+        flex: 0 0 240px;
+        width: 240px;
     }
     
     .id-cards-grid {
@@ -3565,9 +3590,25 @@ a {
         grid-template-columns: 1fr;
     }
     
-    .id-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+    .id-cards-scroll-container {
+        padding: 2rem 1rem 1rem 1rem;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .prev-btn {
+        left: 0.5rem;
+    }
+    
+    .next-btn {
+        right: 0.5rem;
     }
     
     .education-cards-grid {
@@ -3672,8 +3713,29 @@ a {
         font-size: 1.8rem;
     }
     
-    .id-cards-grid {
-        grid-template-columns: 1fr;
+    .id-card-item {
+        flex: 0 0 220px;
+        width: 220px;
+    }
+    
+    .id-cards-scroll-container {
+        padding: 1.5rem 0.5rem 1rem 0.5rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .prev-btn {
+        left: 0;
+    }
+    
+    .next-btn {
+        right: 0;
     }
     
     .floating-badge {
