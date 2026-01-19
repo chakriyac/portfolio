@@ -926,8 +926,8 @@ a {
 
 .about-circles {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 600px;
+    height: 600px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -975,6 +975,7 @@ a {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     height: 600px;
     width: 600px;
+    max-width: 100%;
     margin: 0 auto;
     z-index: 1;
     transform: scale(1);
@@ -988,6 +989,11 @@ a {
 }
 
 .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
     width: 100%;
     height: 100%;
     border-radius: 0 0 50% 50%;
@@ -3457,24 +3463,230 @@ a {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
     .hero-title {
-        font-size: 4rem;
+        font-size: 3rem;
     }
     
     .hero-image-wrapper {
-        width: 400px;
-        height: 400px;
+        width: 300px;
+        height: 300px;
+    }
+    
+    /* Hero Section Image Wrapper */
+    .hero-image-wrapper .image-wrapper {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .hero-image-wrapper .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        max-width: 100%;
+    }
+    
+    /* About Section Image Wrapper */
+    .about-image {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .about-circles {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .about-image .image-wrapper {
+        width: 350px;
+        height: 350px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .about-image .image-wrapper img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        max-width: 100%;
+        display: block;
+    }
+    
+    /* About Section Decorative Circles */
+    .about-circle.circle-1 {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .about-circle.circle-2 {
+        width: 270px;
+        height: 270px;
+    }
+    
+    .about-circle.circle-3 {
+        width: 190px;
+        height: 190px;
+    }
+    
+    .hero-name {
+        font-size: 1.8rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
     }
     
     .achievements-grid {
         grid-template-columns: 1fr;
     }
     
+    .apps-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .id-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .education-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .design-projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-showcase {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Phones - Small Screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-image-wrapper {
+        width: 250px;
+        height: 250px;
+    }
+    
+    /* Hero Section Image Wrapper - Small Screens */
+    .hero-image-wrapper .image-wrapper {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .hero-image-wrapper .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    
+    /* About Section Image Wrapper - Small Screens */
+    .about-image {
+        max-width: 280px;
+        margin: 0 auto 2rem;
+    }
+    
+    .about-circles {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .about-image .image-wrapper {
+        width: 280px;
+        height: 280px;
+        max-width: 100%;
+    }
+    
+    .about-image .image-wrapper img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    
+    /* About Section Decorative Circles - Small Screens */
+    .about-circle.circle-1 {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .about-circle.circle-2 {
+        width: 215px;
+        height: 215px;
+    }
+    
+    .about-circle.circle-3 {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .image-overlay {
+        border-radius: 20px;
+    }
+    
+    .hero-name {
+        font-size: 1.5rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .id-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .floating-badge {
+        width: 50px;
+        height: 50px;
+        font-size: 0.7rem;
+    }
+    
+    .trophy-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skill-category {
+        padding: 1.5rem;
     }
 }
